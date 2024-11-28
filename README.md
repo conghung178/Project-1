@@ -2,22 +2,41 @@
 
 ## Giới thiệu
 
-**Project 1** là một dự án được xây dựng với mục tiêu giải quyết . Dự án sử dụng [công nghệ/lý thuyết chính], kết hợp với [công cụ/thư viện sử dụng] để [mô tả giải pháp]. Với những đặc điểm nổi bật như [tính năng, ưu điểm], dự án này có thể áp dụng rộng rãi trong các lĩnh vực như [lĩnh vực ứng dụng cụ thể, ví dụ: xử lý dữ liệu, học máy, web scraping, phân tích dữ liệu, v.v.].
+**Bin Packing Problem** (Bài toán Đóng gói thùng) là một bài toán tối ưu hóa cổ điển trong lĩnh vực khoa học máy tính và toán học. Mục tiêu của bài toán này là phân loại một tập hợp các đối tượng (items) vào các thùng (bins) sao cho số thùng sử dụng là tối thiểu, với mỗi thùng có một dung lượng cố định. Bài toán này có rất nhiều ứng dụng thực tiễn, chẳng hạn như trong việc tối ưu hóa không gian lưu trữ, tối ưu hóa vận tải hoặc phân phối tài nguyên.
+
+Dự án này cung cấp giải pháp cho bài toán Bin Packing, sử dụng các thuật toán khác nhau như **First-Fit**, **Best-Fit**, **Worst-Fit**, và các phương pháp heuristics (sinh viên, tối ưu hóa toàn cục) để tìm ra cách đóng gói tối ưu nhất.
 
 ## Mục tiêu
 
-Mục tiêu của dự án này là [mục tiêu cụ thể, ví dụ: tự động hóa một quy trình, phân tích dữ liệu, giải quyết bài toán tối ưu hóa]. Qua đó, dự án sẽ cung cấp một giải pháp tối ưu, giúp tiết kiệm thời gian, nâng cao hiệu quả công việc hoặc cải thiện chất lượng của công việc đang thực hiện.
+Mục tiêu của dự án là cung cấp một giải pháp cho bài toán Bin Packing, giúp giảm thiểu số lượng thùng cần sử dụng khi phân loại các đối tượng có kích thước khác nhau. Dự án này có thể áp dụng trong nhiều lĩnh vực như:
+
+- **Tối ưu hóa không gian lưu trữ**: Giúp các công ty giảm thiểu không gian lưu trữ khi đóng gói các sản phẩm.
+- **Tối ưu hóa vận tải**: Tối ưu hóa việc vận chuyển hàng hóa bằng cách phân bổ các gói hàng vào các thùng sao cho số thùng cần sử dụng là ít nhất.
+- **Phân phối tài nguyên**: Trong môi trường điện toán phân tán, bài toán này có thể giúp tối ưu hóa việc phân phối tài nguyên vào các máy chủ.
 
 ## Các tính năng chính
 
-- **Tính năng 1**: [Mô tả tính năng và cách ứng dụng thực tế].
-- **Tính năng 2**: [Mô tả tính năng và cách ứng dụng thực tế].
-- **Tính năng 3**: [Mô tả tính năng và cách ứng dụng thực tế].
-- **Tính năng 4**: [Mô tả tính năng và cách ứng dụng thực tế].
+- **Thuật toán First-Fit (FF)**: Chạy qua các đối tượng và đóng gói chúng vào thùng đầu tiên có thể chứa được chúng.
+- **Thuật toán Best-Fit (BF)**: Chọn thùng có thể chứa đối tượng nhưng lại "chật" nhất, giúp tối ưu hóa không gian.
+- **Thuật toán Worst-Fit (WF)**: Chọn thùng có không gian dư thừa lớn nhất.
+- **Heuristic Algorithms**: Áp dụng các thuật toán heuristic để cải thiện hiệu suất đóng gói với ít thùng hơn.
+- **Phân tích hiệu suất**: Đánh giá hiệu quả của các thuật toán dựa trên số lượng thùng đã sử dụng và thời gian chạy của thuật toán.
 
 ## Công nghệ sử dụng
 
-- **Ngôn ngữ lập trình**: Python, [ngôn ngữ khác nếu có]
-- **Công cụ/thư viện**: [Danh sách các thư viện/công cụ chính như NumPy, pandas, scikit-learn, Flask, Django, TensorFlow, etc.]
-- **Cơ sở dữ liệu**: [Nếu có cơ sở dữ liệu thì liệt kê, ví dụ: MySQL, PostgreSQL, MongoDB]
-- **Framework**: [Nếu có, ví dụ: Flask/Django cho web development]
+- **Ngôn ngữ lập trình**: Python
+- **Thư viện**: 
+  - `numpy` (để tính toán các phép toán số học và ma trận)
+  - `matplotlib` (để vẽ đồ thị và trực quan hóa kết quả)
+  - `time` (để đo thời gian chạy của các thuật toán)
+- **Framework**: Không sử dụng framework đặc biệt (đây là một bài toán thuật toán đơn giản).
+
+## Hướng dẫn cài đặt
+
+### Bước 1: Clone repository
+
+Sử dụng git để clone dự án về máy:
+
+```bash
+git clone https://github.com/conghung178/Project-BinPacking.git
+cd Project-BinPacking
