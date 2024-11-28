@@ -5,7 +5,8 @@ import seaborn as sns # để tạo màu
 from typing import List, Tuple # để kiểm tra kiểu dữ liệu
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection # để vẽ hình 3D
 
-class Generator: # để tạo dữ liệu, vẽ hình và xóa dữ liệu
+class Generator: 
+    # để tạo dữ liệu, vẽ hình và xóa dữ liệu
     # ý nghĩa các tham số của hàm khởi tạo: 
     # n_items: số lượng hộp, n_bins: số lượng thùng, seed: số ngẫu nhiên, bin_size: kích thước thùng, **kwargs: tham số khác
     # bin_size: List[int] = [100, 100, 100] nghĩa là mặc định kích thước thùng là 100x100x100
@@ -218,3 +219,8 @@ if 11 < 3:
     generator.generate()
     generator.visualize()
     generator.delete()
+
+# chạy cái gì mà in ra 30_1_4.dat vậy :v
+# Generator(30, 1, seed=4, bin_size=[100, 100, 100], filename='30_1_4.dat').generate()
+# sao tôi chạy file DBL in ra file dataset vậy :v
+# Generator(30, 1, seed=4, bin_size=[100, 100, 100], filename='DBL').generate()
