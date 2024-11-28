@@ -19,8 +19,8 @@ Mục tiêu của dự án là cung cấp một giải pháp cho bài toán Bin 
 - **Thuật toán First-Fit (FF)**: Chạy qua các đối tượng và đóng gói chúng vào thùng đầu tiên có thể chứa được chúng.
 - **Thuật toán Best-Fit (BF)**: Chọn thùng có thể chứa đối tượng nhưng lại "chật" nhất, giúp tối ưu hóa không gian.
 - **Thuật toán Worst-Fit (WF)**: Chọn thùng có không gian dư thừa lớn nhất.
-- **Heuristic Algorithms**: Áp dụng các thuật toán heuristic để cải thiện hiệu suất đóng gói với ít thùng hơn.
-- **Phân tích hiệu suất**: Đánh giá hiệu quả của các thuật toán dựa trên số lượng thùng đã sử dụng và thời gian chạy của thuật toán.
+- **Heuristic Algorithms**: Áp dụng các thuật toán heuristic để cải thiện hiệu suất đóng gói với ít thùng hơn, .
+- **Phân tích hiệu suất**: Đánh giá hiệu quả của các thuật toán dựa trên số lượng thùng đã sử dụng và thời gian chạy của thuật toán. 
 
 ## Công nghệ sử dụng
 
@@ -30,13 +30,3 @@ Mục tiêu của dự án là cung cấp một giải pháp cho bài toán Bin 
   - `matplotlib` (để vẽ đồ thị và trực quan hóa kết quả)
   - `time` (để đo thời gian chạy của các thuật toán)
 - **Framework**: Không sử dụng framework đặc biệt (đây là một bài toán thuật toán đơn giản).
-
-## Hướng dẫn cài đặt
-
-### Bước 1: Clone repository
-
-Sử dụng git để clone dự án về máy:
-
-```bash
-git clone https://github.com/conghung178/Project-BinPacking.git
-cd Project-BinPacking
