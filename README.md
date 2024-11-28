@@ -4,7 +4,7 @@
 
 **Bin Packing Problem** (Bài toán Đóng gói thùng) là một bài toán tối ưu hóa cổ điển trong lĩnh vực khoa học máy tính và toán học. Mục tiêu của bài toán này là phân loại một tập hợp các đối tượng (items) vào các thùng (bins) sao cho số thùng sử dụng là tối thiểu, với mỗi thùng có một dung lượng cố định. Bài toán này có rất nhiều ứng dụng thực tiễn, chẳng hạn như trong việc tối ưu hóa không gian lưu trữ, tối ưu hóa vận tải hoặc phân phối tài nguyên.
 
-Dự án này cung cấp giải pháp cho bài toán Bin Packing, sử dụng các thuật toán khác nhau như **First-Fit**, **Best-Fit**, **Worst-Fit**, và phương pháp heuristics, giải thuật di truyền để tìm ra cách đóng gói tối ưu nhất.
+Dự án này cung cấp giải pháp cho bài toán Bin Packing, sử dụng các thuật toán khác nhau như **First-Fit**, **Best-Fit**, **Worst-Fit**, **phương pháp heuristics**, **giải thuật di truyền** để tìm ra cách đóng gói tối ưu nhất.
 
 ## Mục tiêu
 
