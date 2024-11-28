@@ -1,4 +1,4 @@
-# Project 1: Bài toán xếp hàng với chi phí tối thiểu
+# Project 1: Bài toán đóng gói thùng hàng với chi phí tối thiểu
 
 ## Giới thiệu
 
@@ -19,8 +19,8 @@ Mục tiêu của dự án là cung cấp một giải pháp cho bài toán Bin 
 - **Thuật toán First-Fit (FF)**: Chạy qua các đối tượng và đóng gói chúng vào thùng đầu tiên có thể chứa được chúng.
 - **Thuật toán Best-Fit (BF)**: Chọn thùng có thể chứa đối tượng nhưng lại "chật" nhất, giúp tối ưu hóa không gian.
 - **Thuật toán Worst-Fit (WF)**: Chọn thùng có không gian dư thừa lớn nhất.
-- **Heuristic Algorithms**: Áp dụng các thuật toán heuristic để cải thiện hiệu suất đóng gói với ít thùng hơn, .
-- **Phân tích hiệu suất**: Đánh giá hiệu quả của các thuật toán dựa trên số lượng thùng đã sử dụng và thời gian chạy của thuật toán. 
+- **Heuristic Algorithms**: Áp dụng các thuật toán heuristic để cải thiện hiệu suất đóng gói với ít thùng hơn, cụ thể ở đây sử dụng thuật toán **deep-bottom-left (DBL)**.
+- **Phân tích hiệu suất**: Đánh giá hiệu quả của các thuật toán dựa trên số lượng thùng đã sử dụng và thời gian chạy của thuật toán dựa trên độ phủ kín của thùng. 
 
 ## Công nghệ sử dụng
 
