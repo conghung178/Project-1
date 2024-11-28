@@ -1,11 +1,12 @@
 import numpy as np
-from math import atan2
+from math import atan2 # atan2 là hàm tính góc giữa 2 điểm
 import numpy as np
 
 # Tìm hình chiếu của hộp
 def projection(bin):
 
-    height, length, width= bin.shape
+    height, length, width= bin.shape # Chiều cao, dài, rộng của hộp
+    # shape trả về một tuple chứa kích thước của mảng (height, length, width)
     pj = np.zeros((length, width), dtype=int)
     
     for i in range(length):
