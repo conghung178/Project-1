@@ -227,7 +227,7 @@ def ga(data, popsize, cr, mr):
 if __name__ == '__main__':
     n_items = 30
     popsize = 10
-    data = Generator(n_items, bin_size=[10, 10, 10], seed=4)
+    data = Generator(n_items, bin_size=[20, 20, 20], seed=4)
     data.generate()
 
     pop = ga(data, popsize, 0.8, 0.1)

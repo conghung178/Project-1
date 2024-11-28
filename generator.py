@@ -219,8 +219,3 @@ if 11 < 3:
     generator.generate()
     generator.visualize()
     generator.delete()
-
-# chạy cái gì mà in ra 30_1_4.dat vậy :v
-# Generator(30, 1, seed=4, bin_size=[100, 100, 100], filename='30_1_4.dat').generate()
-# sao tôi chạy file DBL in ra file dataset vậy :v
-# Generator(30, 1, seed=4, bin_size=[100, 100, 100], filename='DBL').generate()
