@@ -8,7 +8,7 @@ Dự án này cung cấp giải pháp cho bài toán Bin Packing, sử dụng c�
 
 ## Mục tiêu
 
-Mục tiêu của dự án là cung cấp một giải pháp cho bài toán Bin Packing, giúp giảm thiểu số lượng thùng cần sử dụng khi phân loại các đối tượng có kích thước khác nhau. Dự án này có thể áp dụng trong nhiều lĩnh vực như:
+Mục tiêu của dự án là cung cấp một giải pháp cho bài toán Bin Packing, giúp giảm thiểu số lượng thùng cần sử dụng khi phân loại các đối tượng có kích thước khác nhau. Thực hiện xếp thùng hàng sao cho thỏa mãn các điều kiện thực tế như điều kiện vật lý, điều kiện cân bằng. Dự án này có thể áp dụng trong nhiều lĩnh vực như:
 
 - **Tối ưu hóa không gian lưu trữ**: Giúp các công ty giảm thiểu không gian lưu trữ khi đóng gói các sản phẩm.
 - **Tối ưu hóa vận tải**: Tối ưu hóa việc vận chuyển hàng hóa bằng cách phân bổ các gói hàng vào các thùng sao cho số thùng cần sử dụng là ít nhất.
