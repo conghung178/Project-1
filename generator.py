@@ -5,7 +5,6 @@ import seaborn as sns
 from typing import List, Tuple
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-# thế này thì hỏng
 class Generator:
     def __init__(self, n_items: int, n_bins: int = 1, seed: int = 0, bin_size: List[int] = [100, 100, 100], **kwargs):
         """
