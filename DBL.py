@@ -145,7 +145,6 @@ class Bin3D:
                 tmp[pz:pz+ph,px:px+pw,py:py+pd]=1
                   
             return Stable(tmp,item,x,y,z)
-            return True
         return False
 
     def add_item_2(self, item, rotation_index):
