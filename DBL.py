@@ -1,120 +1,8 @@
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+from visual import visual_plot
 import numpy as np
 from generator import Generator
-import random
-import copy
 from stable import Stable
-
-# Hàm vẽ hình các đối tượng trong không gian 3D
-def draw_box(ax, origin, size, color):
-    x, y, z = origin
-    dx, dy, dz = size
-    
-    vertices = [
-        [x, y, z],
-        [x + dx, y, z],
-        [x + dx, y + dy, z],
-        [x, y + dy, z],
-        [x, y, z + dz],
-        [x + dx, y, z + dz],
-        [x + dx, y + dy, z + dz],
-        [x, y + dy, z + dz]
-    ]
-
-    faces = [
-        [vertices[0], vertices[1], vertices[2], vertices[3]],
-        [vertices[4], vertices[5], vertices[6], vertices[7]],
-        [vertices[0], vertices[1], vertices[5], vertices[4]],
-        [vertices[2], vertices[3], vertices[7], vertices[6]],
-        [vertices[1], vertices[2], vertices[6], vertices[5]],
-        [vertices[4], vertices[7], vertices[3], vertices[0]]
-    ]
-    
-    ax.add_collection3d(Poly3DCollection(faces, facecolors=color, linewidths=1, edgecolors='r', alpha=.25))
-
-def visual_plot(lst_box, size_bin):
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    large_box = ((0, 0, 0), (size_bin[0], size_bin[1], size_bin[2]), 'cyan')
-    draw_box(ax, *large_box)
-    color = ['blue', 'green', 'red', 'purple', 'yellow', 'orange']
-
-    for box in lst_box:
-        origin = (box[0], box[1], box[2])
-        size = (box[3], box[4], box[5])
-        box_color = color[np.random.randint(0, len(color))]
-        draw_box(ax, origin, size, box_color)
-
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_zlabel('Z')
-    ax.set_title('3D Bin Packing Visualization')
-
-    ax.set_xlim(0, size_bin[0])
-    ax.set_ylim(0, size_bin[1])
-    ax.set_zlim(0, size_bin[2])
-
-    plt.show()
-
-# Lớp đại diện cho một cá thể trong thuật toán di truyền
-class Individual:
-    def __init__(self, sothung):
-        self.sothung = sothung
-        self.cathe = np.zeros(self.sothung, dtype=int)
-
-    def create(self):
-        for i in range(self.sothung):
-            self.cathe[i] = random.randint(0, 5)
-
-# Hàm lai ghép giữa hai cá thể
-def crossover(p1, p2):
-    n = p1.sothung
-    i = random.randint(0, n)
-
-    c1 = Individual(n)
-    c2 = Individual(n)
-    c1.cathe = np.concatenate((p1.cathe[:i], p2.cathe[i:]))
-    c2.cathe = np.concatenate((p2.cathe[:i], p1.cathe[i:]))
-    return c1, c2
-
-# Hàm đột biến một cá thể
-def mutate(p):
-    n = p.sothung
-    child = copy.deepcopy(p)
-    point = random.randint(0, n-1)
-    child.cathe[point] = random.randint(0, 5)  # Thay đổi giá trị bằng số ngẫu nhiên giữa 0 và 5
-    return child
-
-# Hàm để tạo thế hệ mới
-def nextgen(data, population, popsize, cr, mr):
-    k = 0
-    child = population.copy()
-    while k < popsize:
-        parent1 = random.choice(population)
-        parent2 = random.choice(population)
-
-        if random.random() < cr:
-            child1, child2 = crossover(parent1, parent2)
-            if child1 not in child:
-                child.append(child1)
-                k += 1
-            if child2 not in child:
-                child.append(child2)
-                k += 1
-
-        if random.random() < mr:
-            child1 = mutate(parent1)
-            child2 = mutate(parent2)
-            if child1 not in child:
-                child.append(child1)
-                k += 1
-            if child2 not in child:
-                child.append(child2)
-                k += 1
-
-    child.sort(key=lambda x: solve(data, x, True), reverse=True)
-    return child[:popsize]
+from GA import ga
 
 # Lớp đại diện cho thùng chứa trong bài toán 3D Bin Packing
 class Bin3D:
@@ -211,17 +99,6 @@ def solve(data, individual, rotation, visualize=False):
 
     return static['used_space']
 
-# Thuật toán di truyền để giải bài toán
-def ga(data, popsize, cr, mr):
-    population = [Individual(n_items) for _ in range(popsize)]
-    for individual in population:
-        individual.create()
-
-    for i in range(popsize):
-        population = nextgen(data, population, popsize, cr, mr)
-        print(i, solve(data, population[0], True))
-
-    return population
 
 if __name__ == '__main__':
     n_items = 30
@@ -229,6 +106,6 @@ if __name__ == '__main__':
     data = Generator(n_items, bin_size=[20, 20, 20], seed=4)
     data.generate()
 
-    pop = ga(data, popsize, 0.8, 0.1)
+    pop = ga(n_items,data, popsize, 0.8, 0.1)
 
     solve(data, pop[0], True, visualize=True)

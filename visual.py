@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 
+# Hàm vẽ hình các đối tượng trong không gian 3D
 def draw_box(ax, origin, size, color):
     x, y, z = origin
     dx, dy, dz = size
@@ -28,31 +29,27 @@ def draw_box(ax, origin, size, color):
     
     ax.add_collection3d(Poly3DCollection(faces, facecolors=color, linewidths=1, edgecolors='r', alpha=.25))
 
-def visual_plot(lst_box,size_bin):
+def visual_plot(lst_box, size_bin):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    large_box = ((0, 0, 0), (size_bin[0],size_bin[1],size_bin[2]), 'cyan')
+    large_box = ((0, 0, 0), (size_bin[0], size_bin[1], size_bin[2]), 'cyan')
     draw_box(ax, *large_box)
-    color = ['blue','green','red','purple','yellow','orange']
+    color = ['blue', 'green', 'red', 'purple', 'yellow', 'orange']
 
-    # Define the small boxes (items)
-    small_boxes = []
     for box in lst_box:
-        box_initial = ((box[0],box[1],box[2]),(box[3],box[4],box[5]),color[np.random.randint(0,len(color)-1)])
-        small_boxes.append(box_initial)
-
-    # Draw each small box
-    for origin, size, color in small_boxes:
-        draw_box(ax, origin, size, color)
+        origin = (box[0], box[1], box[2])
+        size = (box[3], box[4], box[5])
+        box_color = color[np.random.randint(0, len(color))]
+        draw_box(ax, origin, size, box_color)
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
     ax.set_title('3D Bin Packing Visualization')
 
-    ax.set_xlim(0, 10)
-    ax.set_ylim(0, 10)
-    ax.set_zlim(0, 10)
+    ax.set_xlim(0, size_bin[0])
+    ax.set_ylim(0, size_bin[1])
+    ax.set_zlim(0, size_bin[2])
 
     plt.show()
 
