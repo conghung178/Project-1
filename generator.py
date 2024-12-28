@@ -3,12 +3,13 @@ import random # để tạo số ngẫu nhiên
 import matplotlib.pyplot as plt # để vẽ biểu đồ
 import seaborn as sns # để tạo màu
 from typing import List, Tuple # để kiểm tra kiểu dữ liệu
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection # để vẽ hình 3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection # để vẽ hình hộp 3D
 
 class Generator: 
     # để tạo dữ liệu, vẽ hình và xóa dữ liệu
     # ý nghĩa các tham số của hàm khởi tạo: 
-    # n_items: số lượng hộp, n_bins: số lượng thùng, seed: số ngẫu nhiên, bin_size: kích thước thùng, **kwargs: tham số khác
+    # n_items: số lượng hộp, n_bins: số lượng thùng, seed: số ngẫu nhiên, bin_size: kích thước thùng, 
+    # **kwargs: Tham số mở rộng để truyền thêm thông tin như n_samples, filename.
     # bin_size: List[int] = [100, 100, 100] nghĩa là mặc định kích thước thùng là 100x100x100
     def __init__(self, n_items: int, n_bins: int = 1, seed: int = 0, bin_size: List[int] = [100, 100, 100], **kwargs):
         """
