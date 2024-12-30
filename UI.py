@@ -25,6 +25,8 @@ def display_result(label_widget, result):
 # Hàm chạy chương trình
 def run_program():
     try:
+        display_result(result_label, "Đang tính toán...")
+
         # Lấy giá trị i từ ô nhập
         i = int(entry_i.get())
         if i < 0 or i >= len(model):
