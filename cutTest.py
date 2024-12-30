@@ -7,8 +7,10 @@ import torch
 pt_file_path = 'D:\Project 1\cut_1-1.pt'  # Đường dẫn đến file .pt của bạn
 model = torch.load(pt_file_path, map_location=torch.device('cpu'))
 
+# Nhập i
+i = int(input("Nhập i: ")) 
 # Kích thước các vật phẩm đã cho
-item_sizes = model[4]
+item_sizes = model[i]
 
 # Thêm tọa độ gốc (mặc định là [0, 0, 0])
 items = [([0, 0, 0], size) for size in item_sizes]
@@ -32,14 +34,14 @@ num_items = len(item_sizes)
 
 if __name__ == '__main__':
     popsize = 20
-    print(model[4])
+    print(model[i])
 
     pop = ga(num_items, data, popsize, 0.8, 0.1)
     solve(data, pop[0], True, visualize=True)
 
 """ Kết quả
 model[0]  0.87 --> 0.9
-model[1]  0.91
+model[1]  0.91 --> 0.956
 model[2]  0.871
 model[3]  0.868
 model[4]  0.896
