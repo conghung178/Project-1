@@ -64,7 +64,7 @@ root.geometry("1200x800")  # Đặt kích thước cửa sổ là 1200x800
 
 # Label và Entry để nhập i
 label_i = ttk.Label(root, text="Nhập i:", font=("Arial", 14))
-label_i.grid(row=0, column=0, padx=10, pady=10)
+label_i.grid(row=0, column=0, padx=5, pady=10)
 
 entry_i = ttk.Entry(root, font=("Arial", 14))
 entry_i.grid(row=0, column=1, padx=10, pady=10)
