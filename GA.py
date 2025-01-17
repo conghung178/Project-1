@@ -9,17 +9,20 @@ class Individual:
         self.sothung = sothung
         self.cathe = np.zeros(self.sothung, dtype=int)
 
+    # Khởi tạo ngẫu nhiên kiểu xoay của các vật phẩm
     def create(self):
         for i in range(self.sothung):
             self.cathe[i] = random.randint(0, 5)
 
 # Hàm lai ghép giữa hai cá thể
 def crossover(p1, p2):
-    n = p1.sothung
-    i = random.randint(0, n)
+    n = p1.sothung # số lượng vật phẩm
+    i = random.randint(0, n) # điểm cắt ngẫu nhiên
 
     c1 = Individual(n)
     c2 = Individual(n)
+    # Lai ghép các cá thể, tạo ra 2 cá thể con 
+    # Kết hợp nửa đầu từ cha và nửa sau từ mẹ để tạo ra cá thể con.
     c1.cathe = np.concatenate((p1.cathe[:i], p2.cathe[i:]))
     c2.cathe = np.concatenate((p2.cathe[:i], p1.cathe[i:]))
     return c1, c2
@@ -28,13 +31,24 @@ def crossover(p1, p2):
 def mutate(p):
     n = p.sothung
     child = copy.deepcopy(p)
+    # Chọn ngẫu nhiên một vị trí trong cá thể và thay đổi kiểu xoay của nó
     point = random.randint(0, n-1)
+    # Thay đổi kiểu xoay của vật phẩm tại vị trí point
     child.cathe[point] = random.randint(0, 5)  # Thay đổi giá trị bằng số ngẫu nhiên giữa 0 và 5
     return child
 
-# Hàm để tạo thế hệ mới
+# Hàm để tạo thế hệ mới từ quần thể hiện tại
 def nextgen(data, population, popsize, cr, mr):
+    '''
+    data: Dữ liệu đầu vào của bài toán.
+    population: Quần thể hiện tại (danh sách các cá thể).
+    popsize: Số lượng cá thể trong quần thể.
+    cr: Xác suất lai ghép (crossover rate).
+    mr: Xác suất đột biến (mutation rate).
+    '''
     from DBL import solve
+
+    # khởi tạo một danh sách thế hệ mới
     k = 0
     child = population.copy()
     while k < popsize:
