@@ -40,7 +40,7 @@ class Bin3D:
         return False
 
     #Chức năng: thêm một vật vào thùng chứa nếu tìm được vị trí phù hợp
-    def add_item_2(self, item, rotation_index):
+    def add_item(self, item, rotation_index):
         #item: vật cần xếp: 6 tham số
         rotated_item = self.rotation(item[1], rotation_index) # kích thước của vật sau khi xoay
 
@@ -82,12 +82,12 @@ def deep_bottom_left_bin_packing_3d(items, bin_dimensions, rotation, individual)
     for i, item in enumerate(items):
         placed = False
         for bin in bins:
-            if bin.add_item_2(item, individual.cathe[i]):
+            if bin.add_item(item, individual.cathe[i]):
                 placed = True
                 break 
         if not placed:
             new_bin = Bin3D(*bin_dimensions)
-            new_bin.add_item_2(item, individual.cathe[i])
+            new_bin.add_item(item, individual.cathe[i])
             bins.append(new_bin)
     return bins
 

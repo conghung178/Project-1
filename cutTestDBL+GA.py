@@ -1,10 +1,12 @@
 from GA import ga
 from DBL import solve
+import numpy as np
+from GA import Individual
 
 import torch
 
 # Đọc file .pt chứa dữ liệu
-pt_file_path = 'D:\Project 1\cut_1-1.pt'  # Đường dẫn đến file .pt của bạn
+pt_file_path = r'D:\Project 1\cut_1-1.pt'  # Đường dẫn đến file .pt của bạn
 model = torch.load(pt_file_path, map_location=torch.device('cpu'))
 
 # Nhập i
@@ -39,10 +41,4 @@ if __name__ == '__main__':
     pop = ga(num_items, data, popsize, 0.8, 0.1)
     solve(data, pop[0], True, visualize=True)
 
-""" Kết quả
-model[0]  0.87 --> 0.9
-model[1]  0.91 --> 0.956
-model[2]  0.871
-model[3]  0.868
-model[4]  0.896
-"""
+
