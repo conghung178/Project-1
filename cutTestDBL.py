@@ -37,10 +37,10 @@ num_items = len(item_sizes)
 if __name__ == '__main__':
     popsize = 20
     print(model[i])
-    
+
     individual = Individual(num_items)
     individual.cathe = np.zeros(num_items, dtype=int)  # Gán tất cả kiểu xoay = 0
 
-    result = solve(data, individual, True, visualize=True)
+    result = solve(data, individual, True, visualize=False)
 
     print("Tỷ lệ phủ của thùng là:", result)
